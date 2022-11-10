@@ -1,0 +1,55 @@
+1 - Initialisation de la session
+
+- Initialiser la session
+- Créer la variable de session 'players' qui est un tableau
+  - Dans le tableau de session 'players', créer deux joueurs :
+    - Joueur Farid, Id 0
+    - Joueur Martin, Id 1
+- Créer la variable de session 'round' qui est un tableau
+- Créer la variable de session 'next_player_id' qui a comme valeur l'id du premier joueur
+
+Aide : https://www.php.net/manual/en/session.idpassing.php#example-4790
+
+2 - Affichage des joueurs
+
+- Faire une boucle sur la variable de session des joueurs
+- Pour chaque joueur, afficher son nom dans un <th>
+
+3 - Gestion dynamique des joueurs
+
+- Fichier index.html : 
+  - Ajouter un input de type hidden avec le nom 'formtype' et la valeur 'users'
+  - Modifier la méthode du formulaire en 'post'
+
+- Fichier table.php :
+  - Ajouter une condition pour vérifier si des données sont envoyées en POST
+  - Si oui :
+    - Afficher la variable POST dans un 'var_dump'
+    - Ajouter une condition pour vérifier si la variable POST avec le nom 'formtype' est définie, et sa valeur est 'users'
+      - Si oui :
+        - Traiter les données du formulaire afin d'ajouter les joueurs dans la variable de session 'players'
+
+4 - Gestion dynamique du score
+
+- Remplacer la 'div' en dessous par un 'form' en méthode 'post'
+- Ajouter un input de type hidden avec le nom 'formtype' et la valeur 'game'
+
+- Avant de définir la variable de sessions 'round', ajouter une condition comme pour 'players'
+
+- Ajouter une condition pour vérifier si la variable POST avec le nom 'formtype' est définie, et sa valeur est 'game'
+  - Si oui, traiter les données du formulaire :
+    - Récupérer le nouveau score dans une variable 'newScore'
+    - En utilisant la variable de session 'next_player_id', ajouter le nouveau score dans la variable de session 'round'
+
+La variable de session 'round' est un tableau qui contient un tableau pour chaque tour de jeu. Elle va ressembler à ça :
+[
+  [               // Début du tour 1
+    0 => 256,     // Score du joueur 0 (key = playerId = 0, value = 256)
+    1 => 280,     // Score du joueur 1
+  ],              // Fin du tour 1
+  [               // Début du tour 2
+    0 => 212,     // Score du joueur 0
+    1 => 246,     // Score du joueur 1
+  ],              // Fin du tour 2
+  ...
+];
