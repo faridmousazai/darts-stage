@@ -64,17 +64,17 @@ body {
 
 .joueurs {
   background-color: #ffffff;
-  height: 90px;
+  height: 45vh;
   width: 90%;
   margin: 26px auto 0 auto;
   border-radius: 5px;
 }
 div .paragraph {
-  text-align: left;
+  text-align: center;
   padding-left: 16px;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 20px;
   line-height: 24px;
 }
 .joueurs .flex {
@@ -84,8 +84,31 @@ div .paragraph {
   display: flex;
   align-items: center;
   width: 85%;
+  flex-direction: column;
+}
+.flex #add-player {
+  background-color: #0f0f10;
+  color: #ffffff;
+  font-size: 1.5rem;
+  box-sizing: content-box;
+  height: 25px;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+.joueurs a {
+  color: #ffffff;
+  background: #4f1419;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
 }
 .joueurs input {
+  display: flex;
+  text-align: center;
+  margin-bottom: 15px;
   padding: 6px 12px 6px 12px;
   height: 33px;
   margin-left: 14px;
@@ -148,6 +171,46 @@ div .button a {
   color: #ffffff;
 }
 
+/*css pour la page de la liste de joueurs*/
+
+#liste-joueurs {
+  margin: 15px 15px 30px 15px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  background-color: #d1dbec;
+  border-radius: 10px;
+}
+
+#liste-joueurs tr {
+  margin: 10px 10px;
+}
+#liste-joueurs td {
+  padding: 7px;
+}
+
+/*css pour la page de  deleted */
+.titre-joueurs {
+  text-align: center;
+  color: #d1dbec;
+  margin-top: 20px;
+}
+.return {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 20px 0 20px;
+  padding: 15px;
+  border-radius: 15px;
+}
+.return a {
+  color: #0f0f10;
+  font-size: 1.3rem;
+}
+
 /* table css */
 
 .table {
@@ -159,6 +222,7 @@ div .button a {
   padding: 20px 0;
   border-radius: 5px;
 }
+
 table {
   border-collapse: collapse;
   table-layout: fixed;
@@ -222,7 +286,7 @@ form #add_score {
 .container {
   width: 100%;
   height: 100vh;
-  background: #2b3c72;
+  /* background: #2b3c72; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,13 +327,28 @@ form #add_score {
   margin: 20px auto 10px;
   border-radius: 25px;
 }
+/* supprimer page */
+
+.supprimer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.supprimer a {
+  font-size: 1rem;
+  color: #0f0f10;
+}
 
 /* sent page */
 
 .container {
   width: 100%;
   height: 100vh;
-  background: #2b3c72;
+  /* background: #2b3c72; */
   display: flex;
   /* flex-direction: column; */
   align-items: center;
@@ -324,3 +403,5 @@ form #add_score {
 .footer a {
   color: black;
 }
+
+/* media quirey */

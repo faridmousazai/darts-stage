@@ -1,38 +1,42 @@
 let btn = document.getElementById('add-player');
-let input = document.getElementById('player-name');
+
 let players = document.querySelector('.players');
 let form = document.getElementById('form');
 
 btn.addEventListener('click', createPlayer);
-function createPlayer(){
-  
-  
-    // A LA PLACE DE LA div, Créer un input
-    
-    var el = document.createElement('input');
-    el.setAttribute('name', 'players[]');
+
+function createPlayer() {
+  let input = document.getElementById('player-name').value;
+  let inputLname = document.getElementById('player-lname').value;
+  let inputPmail = document.getElementById('player-mail').value;
+ 
+  let player = 
+  JSON.stringify({
+    "nom":inputLname,
+    "prenom":input,
+    "mail":inputPmail,
    
-    el.value = input.value;
-      //Désactiver l'input pour empecher l'utilisateur de mettre du texte : https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_disabled
-      el.setAttribute('disabled', 'disabled');
+   });
+  //  console.log(player, player.length);
+  fetch("http://localhost:4000/joueur",
+  {
+    //mode:"no-cors",
+    method: 'POST',
+    body: player ,
+    headers: {
+      "Content-Type":'application/json',
+      "Accept":"*/*",
+      "Content-length":player.length,
+      connection: 'keep-alive',
+    }
 
+  }).then(res => console.log(res))
+   .catch(err => console.log(err));
 
-    //Modifier le CSS pour avoir la même apparence qu'à l'origine
-    
-    //Modifier le HTML pour que la div players devienne un form, lui attribuer la méthode get : https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_form_method
-    // el.innerHTML = '<label>'  + '</label><img src="/logos/x.svg">';
-    var label = document.createElement('label');
-    label.classList.add('player');
-    label.appendChild(el);
-    var img = document.createElement('img');
-    img.src = "logos/x.svg";
-    label.appendChild(img);
-
-    players.append(label);
-    input.value = '';
-    var img = label.querySelector('img');
-    img.addEventListener('click', removePlayer);
+  
+  
 }
+
 function removePlayer(){
     this.parentElement.remove();
 }
@@ -50,6 +54,15 @@ form.addEventListener('submit', function(event){
     
   }
 })
+
+
+
+
+
+
+
+
+
 
 
 

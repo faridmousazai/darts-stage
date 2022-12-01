@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>List de Joueurs</title>
+    </head>
+    <body onload="listDejoueurs()">
+        <header>
+            <div class="header">
+                <img class="logo" src="logos/darts.png">
+                <h1>DARTS</h1>
+            </div>
+        </header>
+
+        <h2 class="titre-joueurs">La liste des joueurs!</h2>
+        <section class="listeJoueurs">
+            <div id="liste-joueurs">
+                <form id="form" action="table.html" method="get"
+                    class="players">
+
+                    <button class="button" type="submit" form="form">
+                        Démarrer la partie</button>
+
+
+                </form>
+
+
+            </div>
+
+        </section>
+        <section>
+            <div class="supprimer">
+                <a href="suprimerJoueurs.html">Supprimer les
+                    joueurs</a>
+            </div>
+        </section>
+
+
+        <footer class="container_footer">
+            <div class="footer">
+                <h4> <a href="index.html">Page d'accueil</a></h4>
+                <p class="">Tous droits réservés &copy; - 2022</p>
+
+            </div>
+            <script src="list-joueurs.js"></script>
+        </body>
+    </html>
