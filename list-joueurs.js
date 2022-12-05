@@ -48,8 +48,10 @@ function listDejoueurs() {
                     let checkbox = document.createElement("input");
                     checkbox.setAttribute("type", "checkbox");
                     checkbox.setAttribute("id", list.id);
-                    checkbox.setAttribute("name", list.nom)
-                    tr.append(checkbox);
+                    checkbox.setAttribute("name", list.prenom)
+                    let tdcheckbox = document.createElement("td");
+                    tdcheckbox.append(checkbox);
+                    tr.append(tdcheckbox);
 
                     let tdNom = document.createElement("td");
                     tdNom.innerHTML = list.nom;

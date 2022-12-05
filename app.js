@@ -5,16 +5,17 @@ let form = document.getElementById('form');
 
 btn.addEventListener('click', createPlayer);
 
-function createPlayer() {
-  let input = document.getElementById('player-name').value;
-  let inputLname = document.getElementById('player-lname').value;
-  let inputPmail = document.getElementById('player-mail').value;
+function createPlayer(event) {
+  event.preventDefault();
+  let input = document.getElementById('player-name');
+  let inputLname = document.getElementById('player-lname');
+  let inputPmail = document.getElementById('player-mail');
  
   let player = 
   JSON.stringify({
-    "nom":inputLname,
-    "prenom":input,
-    "mail":inputPmail,
+    "nom":inputLname.value,
+    "prenom":input.value,
+    "mail":inputPmail.value,
    
    });
   //  console.log(player, player.length);
@@ -30,7 +31,12 @@ function createPlayer() {
       connection: 'keep-alive',
     }
 
-  }).then(res => console.log(res))
+  }).then(res =>{
+    console.log(res)
+    input.value = '';
+    inputLname.value = '';
+    inputPmail.value = '';
+  })
    .catch(err => console.log(err));
 
   

@@ -194,8 +194,13 @@ div .button a {
 /*css pour la page de  deleted */
 .titre-joueurs {
   text-align: center;
-  color: #d1dbec;
   margin-top: 20px;
+  background-color: white;
+  margin: 20px 40px;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 2rem;
 }
 .return {
   background-color: #ffffff;
@@ -227,8 +232,7 @@ table {
   border-collapse: collapse;
   table-layout: fixed;
 }
-table td:not(:first-child),
-table th:not(:first-child) {
+table td:not(:first-child) {
   border-left: 2px solid black;
 }
 .name {
@@ -236,7 +240,7 @@ table th:not(:first-child) {
 }
 
 .table th {
-  padding-bottom: 15px;
+  padding-bottom: 30px;
 }
 .table td {
   text-align: center;
